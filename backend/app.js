@@ -9,6 +9,9 @@ const app = express();
 // Log des requests et des responses
 app.use(morgan('dev'));
 
+// Accès au corps de la requête
+app.use(express.json());
+
 // Gestion des erreurs de CORS
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
